@@ -1,0 +1,21 @@
+.nav {
+  display: flex;
+  justify-content: space-around;
+
+  &-link {
+    border-bottom: 2px solid transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+
+    &:hover, &.active {
+      border-bottom: 2px solid var(--primary-color);
+    }
+  }
+
+  @media (max-width: 425px) {
+    flex-wrap: wrap;
+  }
+}

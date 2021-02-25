@@ -1,0 +1,54 @@
+<div class="banner-wrapper bg-light">
+  <div class="banner-content">
+    <div>THE BRAND</div>
+    <div>OF LUXURIOUS FASHION</div>
+  </div>
+</div>
+
+<div class="content-container">
+  <div class="offers">
+    <div *ngFor="let offer of offers">
+      <img [src]="offer.src" alt="offer">
+      <div class="label">
+        <div class="labelTop text-dark">{{offer.labelTop}}</div>
+        <div class="labelBottom text-primary">{{offer.labelBottom}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-container">
+  <div class="featured-header">
+    <h3>Featured Items</h3>
+    <h4 class="text-secondary">Shop for items based on what we featured in this week</h4>
+  </div>
+  <div class="featured-items">
+    <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+  </div>
+  <div class="featured-button">
+    <button class="btn p-1">
+      Browse All Products
+      <img src="assets/images/arrowToRight.png" alt="arrow">
+    </button>
+  </div>
+</div>
+
+<div class="content-container">
+  <div class="promo-wrapper">
+    <div class="promo-banner">
+      <div class="promo-text text-light">
+        <h3>30% <span class="text-primary">OFFER</span></h3>
+        <h4>FOR WOMEN</h4>
+      </div>
+    </div>
+    <div class="promo-detail bg-dark text-light">
+      <div class="promo-unit" *ngFor="let idx of ['','','']">
+        <h4>Free Delivery</h4>
+        <div class="details">
+          Worldwide delivery on all. Authorit tively morph
+          next-generation innov tion with extensive models.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

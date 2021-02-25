@@ -1,0 +1,137 @@
+footer {
+
+  > div:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .footer-banner {
+    background: url("/assets/images/footback.jpg") no-repeat;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 438px;
+
+    .content {
+
+      .label {
+        margin-bottom: 2rem;
+        text-align: center;
+
+        h3 {
+          font-size: 1.5rem;
+        }
+
+        h4 {
+          text-transform: uppercase;
+        }
+      }
+
+      form {
+        display: flex;
+        justify-content: center;
+
+        input {
+          border-radius: 23px 0 0 23px;
+          width: 280px;
+        }
+
+        button {
+          border-radius: 0 23px 23px 0;
+        }
+      }
+    }
+
+    .divider {
+      width: 1px;
+      height: 100%;
+    }
+
+    @media (max-width: 425px) {
+      flex-direction: column;
+
+      .label {
+        color: var(--primary-color);
+      }
+
+      .divider {
+        display: none;
+      }
+    }
+
+    @media (max-width: 320px) {
+      .content form input {
+        width: auto;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    .information {
+      max-width: 40%;
+
+      p {
+        font-size: 0.9rem;
+        margin-top: 2rem;
+        text-align: justify;
+      }
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-evenly;
+      min-width: 60%;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+
+      .information {
+        max-width: 80%;
+        margin-bottom: 1rem;
+      }
+
+      .content {
+        min-width: 80%;
+        justify-content: space-between;
+
+        @media (max-width: 425px) {
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          justify-content: space-around;
+        }
+
+        @media (max-width: 320px) {
+          gap: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .copyright {
+
+    > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    a {
+      filter: contrast(0);
+      margin-right: 0.5rem;
+
+      &:hover {
+        filter: contrast(1);
+      }
+    }
+
+    @media (max-width: 425px) {
+      > div {
+        flex-direction: column;
+      }
+    }
+  }
+}

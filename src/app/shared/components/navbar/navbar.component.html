@@ -1,0 +1,14 @@
+<div class="content-container">
+  <nav>
+    <ul class="nav">
+      <li class="nav-item" *ngFor="let option of options">
+        <a
+          class="nav-link p-05 text-dark"
+          [routerLink]="option.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="option.path === '' ? {exact:true} : {exact:false}"
+        >{{ option.name }}</a>
+      </li>
+    </ul>
+  </nav>
+</div>

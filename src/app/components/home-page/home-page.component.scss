@@ -1,0 +1,173 @@
+.banner-wrapper {
+
+  .banner-content {
+    height: 610px;
+    background: url("/assets/images/topHeaderBack.png") no-repeat 75% -15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    div:nth-child(n) {
+      border-left: 12px solid var(--primary-color);
+      padding-left: 12px;
+      margin-left: 1.5rem;
+    }
+
+    div:first-child {
+      font-size: 2.5rem;
+    }
+
+    div:last-child {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 425px) {
+      color: var(--primary-color);
+    }
+  }
+}
+
+.offers {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  height: 823px;
+  margin: 3rem 0;
+  align-items: center;
+
+  > div {
+    position: relative;
+  }
+
+  .label {
+    position: absolute;
+    top: 25px;
+    padding: 15px 20px;
+    background: #fff;
+    text-transform: uppercase;
+  }
+
+  .labelTop {
+    font-weight: 700;
+  }
+
+  .labelBottom {
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+
+  @media (max-width: 1024px) {
+    height: auto;
+    flex-wrap: nowrap;
+  }
+
+  @media (max-width: 425px) {
+    > div {
+      margin-top: 100px;
+    }
+
+    img {
+      max-width: 300px;
+    }
+
+    .label {
+      width: 100%;
+      top: -100px;
+    }
+  }
+}
+
+.featured {
+  &-header {
+    margin: 3rem 0;
+    text-align: center;
+
+    h3 {
+      font-size: 2rem;
+    }
+  }
+
+  &-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  &-button {
+    margin: 3rem auto;
+
+    button {
+      display: block;
+      margin: 0 auto;
+      img {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.promo-wrapper {
+  margin-bottom: 3rem;
+  display: flex;
+
+  .promo-banner {
+    width: 70%;
+    background: url("/assets/images/offerForWomen.jpg") no-repeat;
+    background-size: cover;
+    position: relative;
+
+    .promo-text {
+      position: absolute;
+      top: 146px;
+      left: 40px;
+      h3 {
+        font-size: 4rem;
+        font-weight: 700;
+      }
+      h4 {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .promo-detail {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .promo-unit {
+      padding: 30px 30px 30px 110px;
+      flex-grow: 1;
+      &:first-child {
+        background: url("/assets/images/offerDetails1.png") no-repeat 36px 30px;
+      }
+      &:nth-child(2) {
+        background: url("/assets/images/offerDetails2.png") no-repeat 36px 30px;
+      }
+      &:last-child {
+        background: url("/../assets/images/offerDetails3.png") no-repeat 36px 30px;
+      }
+
+      h4 {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      .details {
+        line-height: 24px;
+        margin-top: 15px;
+        text-align: justify;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .promo-banner {
+      display: none;
+    }
+    .promo-detail {
+      width: auto;
+    }
+  }
+}
