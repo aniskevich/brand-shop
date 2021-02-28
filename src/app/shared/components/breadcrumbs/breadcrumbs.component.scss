@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  ul {
+    display: flex;
+
+    > li:not(:last-child)::after {
+      content: ' / ';
+    }
+
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: var(--dark-color);
+      font-weight: 400;
+
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+  }
+}

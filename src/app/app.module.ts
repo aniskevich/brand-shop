@@ -15,6 +15,9 @@ import { HomePageComponent } from './components/home-page/home-page.component'
 import { ProductCardComponent } from './shared/components/product-card/product-card.component'
 import { PromoComponent } from './shared/components/promo/promo.component'
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
+import { ProductPageComponent } from './components/product-page/product-page.component'
+import { BreadcrumbsComponent } from './shared/components/breadcrumbs/breadcrumbs.component'
+import { FeatureComponent } from './shared/components/feature/feature.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
     HomePageComponent,
     ProductCardComponent,
     PromoComponent,
-    SidebarComponent
+    SidebarComponent,
+    ProductPageComponent,
+    BreadcrumbsComponent,
+    FeatureComponent
   ],
   imports: [
     BrowserModule,

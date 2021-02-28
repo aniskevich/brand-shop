@@ -1,0 +1,28 @@
+.featured {
+  &-header {
+    margin: 3rem 0;
+    text-align: center;
+
+    h3 {
+      font-size: 2rem;
+    }
+  }
+
+  &-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  &-button {
+    margin: 3rem auto;
+
+    button {
+      display: block;
+      margin: 0 auto;
+      img {
+        margin-left: 10px;
+      }
+    }
+  }
+}
