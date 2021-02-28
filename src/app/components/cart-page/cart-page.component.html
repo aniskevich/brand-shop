@@ -1,0 +1,80 @@
+<app-breadcrumbs></app-breadcrumbs>
+
+<div class="content-container p-3">
+  <div class="cart">
+    <div class="heading border-bottom p-05">
+      <div>PRODUCT DETAILS</div>
+      <div>UNIT PRICE</div>
+      <div>QUANTITY</div>
+      <div>SHIPPING</div>
+      <div>SUBTOTAL</div>
+      <div>ACTION</div>
+    </div>
+    <div class="content text-secondary p-05 border-bottom">
+      <div class="product-card p-1">
+        <img src="assets/images/product1.jpg" alt="product">
+        <div>
+          <h4 class="text-dark"> Name </h4>
+          <p>
+            Color: black<br>
+            Size: XL
+          </p>
+        </div>
+      </div>
+      <div class="col-md-2">$ 150.00</div>
+      <div class="col-md-2">2 pcs.</div>
+      <div class="col-md-1">free</div>
+      <div class="col-md-2">$ 300.00</div>
+      <div class="col-md-1">x</div>
+    </div>
+    <div class="content text-secondary p-05 border-bottom">
+      <div class="product-card p-1">
+        <img src="assets/images/product5.jpg" alt="product">
+        <div>
+          <h4 class="text-dark"> Name </h4>
+          <p>
+            Color: black<br>
+            Size: XL
+          </p>
+        </div>
+      </div>
+      <div class="col-md-2">$ 150.00</div>
+      <div class="col-md-2">2 pcs.</div>
+      <div class="col-md-1">free</div>
+      <div class="col-md-2">$ 300.00</div>
+      <div class="col-md-1">x</div>
+    </div>
+  </div>
+
+  <div class="controls p-1">
+    <button class="btn btn-light">CLEAR CART</button>
+    <button class="btn btn-light">CONTINUE SHOPPING</button>
+  </div>
+
+  <div class="shipping p-1">
+    <div>
+      <h4>SHIPPING ADDRESS</h4>
+      <form>
+        <input type="text" placeholder="Bangladesh">
+        <input type="text" placeholder="State">
+        <input type="text" placeholder="Postcode/ZIP">
+        <button class="btn btn-light">GET A QUOTE</button>
+      </form>
+    </div>
+    <div>
+      <h4>COUPON DISCOUNT</h4>
+      <p>Enter your coupon code if you have one</p>
+      <form>
+        <input type="text" placeholder="State">
+        <button class="btn btn-light">APPLY COUPON</button>
+      </form>
+    </div>
+    <div class="bg-light p-3">
+      <p>SUB TOTAL $ 900.00</p>
+      <h4>GRAND TOTAL <span class="text-primary">$ 900.00</span></h4>
+      <a routerLink="checkout">
+        <button class="btn">PROCEED TO CHECKOUT</button>
+      </a>
+    </div>
+  </div>
+</div>

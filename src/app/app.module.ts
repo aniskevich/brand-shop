@@ -17,7 +17,8 @@ import { PromoComponent } from './shared/components/promo/promo.component'
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
 import { ProductPageComponent } from './components/product-page/product-page.component'
 import { BreadcrumbsComponent } from './shared/components/breadcrumbs/breadcrumbs.component'
-import { FeatureComponent } from './shared/components/feature/feature.component'
+import { FeatureComponent } from './shared/components/feature/feature.component';
+import { CartPageComponent } from './components/cart-page/cart-page.component'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FeatureComponent } from './shared/components/feature/feature.component'
     SidebarComponent,
     ProductPageComponent,
     BreadcrumbsComponent,
-    FeatureComponent
+    FeatureComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,
