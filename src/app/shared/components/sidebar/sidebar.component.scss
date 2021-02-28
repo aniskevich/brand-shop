@@ -1,0 +1,31 @@
+.sidebar-container {
+  .sidebar-title {
+    border-left: 4px solid var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    img {
+      height: 10px;
+
+      &.up {
+        transform: scaleY(-1);
+      }
+    }
+  }
+
+   ul li {
+     margin-top: 0.5rem;
+     padding-left: 0.5rem;
+
+     &:hover {
+       color: var(--primary-color);
+       cursor: pointer;
+     }
+   }
+}

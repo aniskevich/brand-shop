@@ -21,8 +21,12 @@ body {
   line-height: 1.6;
 }
 
-ul {
+ul, ol {
   list-style-type: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 img {
@@ -44,6 +48,7 @@ textarea {
   outline: none;
   border: none;
   color: var(--secondary-color);
+  font-size: 0.8rem;
 }
 
 .btn {
@@ -121,3 +126,12 @@ textarea {
 .p-05 {
   padding: 0.5rem;
 }
+
+.p-2 {
+  padding: 2rem;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+

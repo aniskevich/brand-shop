@@ -11,8 +11,10 @@ import { LogoComponent } from './shared/components/logo/logo.component'
 import { FooterLinksComponent } from './shared/components/footer-links/footer-links.component'
 import { CatalogPageComponent } from './components/catalog-page/catalog-page.component'
 import { CommentCardComponent } from './shared/components/comment-card/comment-card.component'
-import { HomePageComponent } from './components/home-page/home-page.component';
+import { HomePageComponent } from './components/home-page/home-page.component'
 import { ProductCardComponent } from './shared/components/product-card/product-card.component'
+import { PromoComponent } from './shared/components/promo/promo.component'
+import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ProductCardComponent } from './shared/components/product-card/product-c
     CatalogPageComponent,
     CommentCardComponent,
     HomePageComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    PromoComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

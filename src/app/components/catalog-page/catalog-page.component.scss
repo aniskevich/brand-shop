@@ -1,0 +1,138 @@
+.topBanner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  .topNav ol {
+    display: flex;
+
+    > li:not(:last-child)::after {
+      content: ' / ';
+    }
+
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: var(--dark-color);
+      font-weight: 400;
+
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+  }
+}
+
+.catalog-container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 1fr auto min-content;
+  grid-gap: 1vw;
+  grid-template-areas:
+  "sidebar filters"
+  "sidebar products"
+  "sidebar pagination";
+
+  .sidebar {
+    grid-area: sidebar;
+  }
+
+  .filters {
+    grid-area: filters;
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+
+      h4 {
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .items ul li {
+        display: inline;
+        margin-right: 0.5rem;
+
+        label {
+          margin-left: 0.2rem;
+        }
+      }
+    }
+
+    .sorting {
+
+      > select:not(:last-child) {
+        margin-right: 0.5rem;
+        min-width: 10%;
+      }
+
+      label {
+        font-size: 0.9rem;
+        background-color: #fff;
+      }
+    }
+  }
+
+  .products {
+    grid-area: products;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-evenly;
+  }
+
+  .pagination {
+    grid-area: pagination;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+      li {
+        display: inline;
+        margin-right: 0.5rem;
+        cursor: pointer;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+
+    .filters {
+      .options {
+        flex-wrap: wrap;
+
+        .items ul li {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.promo {
+  app-promo {
+    display: flex;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0;
+
+    app-promo {
+      flex-wrap: wrap;
+    }
+  }
+}

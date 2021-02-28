@@ -1,1 +1,124 @@
-<p>catalog-page works!</p>
+<div class="topBanner p-3 bg-light">
+  <div>
+    <p class="text-primary">NEW ARRIVALS</p>
+  </div>
+  <div>
+    <nav class="topNav">
+      <ol>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">MEN</a></li>
+        <li><a href="#">NEW ARRIVALS</a></li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<div class="catalog-container p-3">
+  <div class="sidebar">
+    <app-sidebar
+      *ngFor="let menu of sidebar"
+      [title]="menu.title"
+      [items]="menu.items"
+    ></app-sidebar>
+  </div>
+  <div class="filters">
+    <div class="options text-secondary p-2">
+      <div>
+        <h4>Trending now</h4>
+        <div class="items">
+          <ul>
+            <li>Bohemian</li>
+            <li>Floral</li>
+            <li>Lace</li>
+            <li>Floral</li>
+            <li>Lace</li>
+            <li>Bohemian</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <h4>Size</h4>
+        <div class="items">
+          <ul>
+            <li>
+              <input type="checkbox" name="size" id="xxs">
+              <label for="xxs">XXS</label>
+            </li>
+            <li>
+              <input type="checkbox" name="size" id="xs">
+              <label for="xs">XS</label>
+            </li>
+            <li>
+              <input type="checkbox" name="size" id="s">
+              <label for="s">S</label>
+            </li>
+            <li>
+              <input type="checkbox" name="size" id="m">
+              <label for="m">M</label>
+            </li>
+            <li>
+              <input type="checkbox" name="size" id="l">
+              <label for="l">L</label>
+            </li>
+            <li>
+              <input type="checkbox" name="size" id="xl">
+              <label for="xl">XL</label>
+            </li>
+            <li>
+              <input type="checkbox" name="size" id="xxl">
+              <label for="xxl">XXL</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <h4>Price</h4>
+      </div>
+    </div>
+    <div class="sorting bg-light p-1">
+      <label class="text-secondary p-05 border-right" for="type">Sort By</label>
+      <select id="type">
+        <option value="name">Name</option>
+        <option value="price">Price</option>
+      </select>
+      <label class="text-secondary p-05 border-right" for="qty">Show</label>
+      <select id="qty">
+        <option value="10">10</option>
+        <option value="20">20</option>
+      </select>
+    </div>
+  </div>
+  <div class="products p-1">
+    <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+  </div>
+  <div class="pagination">
+    <div>
+      <ul class="text-secondary">
+        <li>
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary p-1">View All</button>
+    </div>
+  </div>
+</div>
+
+<div class="promo bg-dark text-light p-3">
+  <app-promo></app-promo>
+</div>

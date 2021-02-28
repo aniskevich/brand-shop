@@ -1,0 +1,16 @@
+<div class="sidebar-container p-05">
+  <div
+    class="sidebar-title border-bottom text-primary p-05"
+    (click)="opened = !opened"
+  >
+    <h4>{{title | uppercase}}</h4>
+    <img
+      [ngClass]="{up: opened}"
+      src="assets/images/arrowdown.png"
+      alt="arrow"
+    >
+  </div>
+  <ul class="text-secondary" *ngIf="opened">
+    <li *ngFor="let item of items">{{item.name}}</li>
+  </ul>
+</div>
