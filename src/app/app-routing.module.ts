@@ -5,6 +5,7 @@ import {CatalogPageComponent} from './components/catalog-page/catalog-page.compo
 import {MainLayoutComponent} from './layouts/main-layout/main-layout.component'
 import {ProductPageComponent} from './components/product-page/product-page.component'
 import {CartPageComponent} from './components/cart-page/cart-page.component'
+import {CheckoutPageComponent} from './components/checkout-page/checkout-page.component'
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
       {path: '', component: HomePageComponent},
       {path: 'catalog', component: CatalogPageComponent},
       {path: 'catalog/:id', component: ProductPageComponent},
-      {path: 'cart', component: CartPageComponent}
+      {path: 'cart', component: CartPageComponent},
+      {path: 'checkout', component: CheckoutPageComponent}
     ]
   }
 ]
