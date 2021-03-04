@@ -6,7 +6,7 @@ import {Environment} from './interface'
 
 export const environment: Environment = {
   production: false,
-  DBLoginUrl: 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBCTFRZuhFhRTHpgU8NyjGl9MLHKUSlRno'
+  DBLoginUrl: ''
 }
 
 /*
