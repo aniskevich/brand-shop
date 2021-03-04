@@ -8,9 +8,12 @@ header {
 
   > div:last-child {
     margin-left: auto;
-    img {
-      margin-right: 1rem;
+    display: flex;
+
+    button {
+      margin-left: 1rem;
     }
+
   }
 
   .search form {

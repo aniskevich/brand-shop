@@ -14,7 +14,17 @@
     </div>
     <div class="account">
       <a routerLink="/cart"><img src="/assets/images/cart.png" alt="cart"></a>
-      <button class="btn">My Account</button>
-    </div>
+      <div class="buttons" *ngIf="!auth.isAuth(); else logoutBtn">
+        <button class="btn" (click)="modalService.showModal('login')">Sign In</button>
+      </div>
+      <ng-template #logoutBtn>
+        <div class="buttons">
+          <button class="btn" [routerLink]="'account'">My account</button>
+          <button class="btn" (click)="logout()">Sign Out</button>
+        </div>
+      </ng-template>
+      </div>
   </header>
 </div>
+
+

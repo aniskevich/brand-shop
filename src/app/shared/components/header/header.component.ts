@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core'
+import {Component, OnInit} from '@angular/core'
+import {Router} from '@angular/router'
+
+import {ModalService} from '../../../services/modal.service'
+import {AuthService} from '../../../services/auth.service'
 
 @Component({
   selector: 'app-header',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core'
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public modalService: ModalService,
+    public auth: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  logout(): void {
+    this.router.navigate(['/'])
+    this.auth.logout()
+  }
 }

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser'
+import {HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -17,9 +19,12 @@ import { PromoComponent } from './shared/components/promo/promo.component'
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
 import { ProductPageComponent } from './components/product-page/product-page.component'
 import { BreadcrumbsComponent } from './shared/components/breadcrumbs/breadcrumbs.component'
-import { FeatureComponent } from './shared/components/feature/feature.component';
-import { CartPageComponent } from './components/cart-page/cart-page.component';
+import { FeatureComponent } from './shared/components/feature/feature.component'
+import { CartPageComponent } from './components/cart-page/cart-page.component'
 import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component'
+import { ModalComponent } from './shared/components/modal/modal.component'
+import { LoginFormComponent } from './shared/components/login-form/login-form.component'
+import { AccountPageComponent } from './components/account-page/account-page.component'
 
 @NgModule({
   declarations: [
@@ -40,11 +45,17 @@ import { CheckoutPageComponent } from './components/checkout-page/checkout-page.
     BreadcrumbsComponent,
     FeatureComponent,
     CartPageComponent,
-    CheckoutPageComponent
+    CheckoutPageComponent,
+    ModalComponent,
+    LoginFormComponent,
+    AccountPageComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

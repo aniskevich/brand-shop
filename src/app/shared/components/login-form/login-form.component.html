@@ -1,0 +1,36 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="errors text-primary" *ngIf="auth.error$ | async as error">{{error}}</div>
+  <div
+    [ngClass]="{error: form.get('email').touched && form.get('email').invalid}"
+    class="form-control"
+  >
+    <label for="email">E-mail</label>
+    <input type="text" id="email" formControlName="email">
+    <div
+      *ngIf="form.get('email').touched && form.get('email').invalid"
+      class="validation"
+    >
+      <small *ngIf="form.get('email').errors.required">Required Field</small>
+      <small *ngIf="form.get('email').errors.email">Please input correct email</small>
+    </div>
+  </div>
+  <div
+    [ngClass]="{error: form.get('password').touched && form.get('password').invalid}"
+    class="form-control"
+  >
+    <label for="password">Password</label>
+    <input type="password" id="password" formControlName="password">
+    <div
+      *ngIf="form.get('password').touched && form.get('password').invalid"
+      class="validation"
+    >
+      <small *ngIf="form.get('password').errors.required">Required Field</small>
+      <small *ngIf="form.get('password').errors.minlength">Min length: {{form.get('password').errors.minlength.requiredLength}} symbols</small>
+    </div>
+  </div>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="form.invalid"
+  >Log In</button>
+</form>
