@@ -43,17 +43,6 @@ export class CatalogPageComponent implements OnInit {
     }
   ]
 
-  products: Array<ProductCard> = [
-    {id: '1', src: 'assets/images/product1.jpg', name: 'hoodie', price: '$ 300.00'},
-    {id: '2', src: 'assets/images/Product2.jpg', name: 'coat', price: '$ 500.00'},
-    {id: '3', src: 'assets/images/Product3.jpg', name: 'jacket', price: '$ 350.00'},
-    {id: '4', src: 'assets/images/Product4.jpg', name: 't-shirt', price: '$ 150.00'},
-    {id: '5', src: 'assets/images/product5.jpg', name: 't-shirt', price: '$ 200.00'},
-    {id: '6', src: 'assets/images/product6.jpg', name: 'jacket', price: '$ 350.00'},
-    {id: '7', src: 'assets/images/product7.jpg', name: 'trousers', price: '$ 300.00'},
-    {id: '8', src: 'assets/images/product8.jpg', name: 'shorts', price: '$ 250.00'}
-  ]
-
   constructor() { }
 
   ngOnInit(): void {

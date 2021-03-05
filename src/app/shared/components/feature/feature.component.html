@@ -1,13 +1,13 @@
-<div class="content-container">
+<div class="featured content-container">
   <div class="featured-header">
-    <h3>You may also like</h3>
-    <h4 class="text-secondary">Shop for items based on what we featured in this week</h4>
+    <h3>{{title}}</h3>
+    <h4 class="text-secondary">{{text}}</h4>
   </div>
   <div class="featured-items">
     <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
   </div>
   <div class="featured-button">
-    <button class="btn p-1">
+    <button class="btn p-1" [routerLink]="['catalog']">
       Browse All Products
       <img src="assets/images/arrowToRight.png" alt="arrow">
     </button>

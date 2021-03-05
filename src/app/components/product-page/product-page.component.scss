@@ -1,7 +1,12 @@
 .banner-wrapper {
   .banner-content {
     height: 610px;
-    background: url("/assets/images/singlepage.jpg") no-repeat 50%;
+    display: flex;
+    justify-content: center;
+
+    img {
+      max-height: 570px;
+    }
   }
 }
 
@@ -72,6 +77,7 @@
       select, input {
         display: block;
         width: 100%;
+        text-transform: uppercase;
       }
 
       input {

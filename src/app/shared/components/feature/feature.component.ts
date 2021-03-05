@@ -1,23 +1,33 @@
-import { Component, OnInit } from '@angular/core'
-import {ProductCard} from '../../interfaces'
+import {Component, Input, OnDestroy, OnInit} from '@angular/core'
+import {Subscription} from 'rxjs'
+
+import {Product} from '../../interfaces'
+import {ProductService} from '../../../services/product.service'
+
 
 @Component({
   selector: 'app-feature',
   templateUrl: './feature.component.html',
   styleUrls: ['./feature.component.scss']
 })
-export class FeatureComponent implements OnInit {
+export class FeatureComponent implements OnInit, OnDestroy {
 
-  products: Array<ProductCard> = [
-    {id: '1', src: 'assets/images/product1.jpg', name: 'hoodie', price: '$ 300.00'},
-    {id: '2', src: 'assets/images/Product2.jpg', name: 'coat', price: '$ 500.00'},
-    {id: '3', src: 'assets/images/Product3.jpg', name: 'jacket', price: '$ 350.00'},
-    {id: '4', src: 'assets/images/Product4.jpg', name: 't-shirt', price: '$ 150.00'}
-  ]
+  @Input() title: string
+  @Input() text: string
 
-  constructor() { }
+  products: Product[]
+  productsSub: Subscription
+
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+    this.productsSub = this.productService.getAll(4).subscribe(products => this.products = products)
+  }
+
+  ngOnDestroy(): void {
+    if (this.productsSub) {
+      this.productsSub.unsubscribe()
+    }
   }
 
 }

@@ -1,10 +1,10 @@
 <div class="card product">
-  <img [src]="product.src" alt="product">
-  <div class="card-body">
+  <img [src]="product.link[0]" alt="product">
+  <div class="card-body p-05">
     <h4 class="card-text text-secondary">{{product.name}}</h4>
-    <h3 class="card-text text-primary">{{product.price}}</h3>
+    <h3 class="card-text text-primary">$ {{product.price}}</h3>
   </div>
   <div class="buyFade">
-    <button class="btn btn-transparent">Details</button>
+    <button class="btn btn-transparent" [routerLink]="['/', 'catalog', product.id]">Details</button>
   </div>
 </div>

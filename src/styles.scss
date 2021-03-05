@@ -49,6 +49,7 @@ textarea {
   border: none;
   color: var(--secondary-color);
   font-size: 0.8rem;
+  background: none;
 }
 
 .btn {
@@ -110,6 +111,10 @@ textarea {
 
 .border {
   border: 1px solid var(--light-color);
+
+  &-secondary {
+    border-color: var(--secondary-color);
+  }
 }
 
 .border-bottom {

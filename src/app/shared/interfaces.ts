@@ -1,5 +1,3 @@
-import {EventEmitter} from '@angular/core'
-
 export interface ProductCard {
   id: string
   name: string
@@ -16,4 +14,21 @@ export interface User {
 export interface FBAuthResponse {
   idToken: string
   expiresIn: string
+}
+
+export interface Product {
+  id?: string
+  name: string
+  price: string
+  material: string
+  designer: string
+  description: string
+  size: string[]
+  color: string[]
+  category: string[]
+  link: string[]
+}
+
+export interface FBProductsResponse {
+  [key: string]: Product
 }

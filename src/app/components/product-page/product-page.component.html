@@ -1,49 +1,53 @@
 <app-breadcrumbs></app-breadcrumbs>
 
-<div class="banner-wrapper bg-light">
-  <div class="banner-content">
-  </div>
-</div>
-<div class="content-container">
-  <div class="product border p-3">
-    <div class="info">
-      <h4 class="text-primary">women collection</h4>
-      <h3>moschino cheap and chic</h3>
-      <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dicta doloribus earum
-        libero neque nisi, quam quibusdam rerum sapiente tempora?</p>
-      <div class="extra">
-        <p class="text-secondary">material: <span class="text-dark">cotton</span></p>
-        <p class="text-secondary">designer: <span class="text-dark">moschino</span></p>
-      </div>
-      <h3 class="text-primary">$ 561.00</h3>
+<div *ngIf="product; else loading">
+  <div class="banner-wrapper bg-light">
+    <div class="banner-content">
+      <img [src]="product.link[0]" alt="product">
     </div>
-    <div class="divider bg-light"></div>
-    <div class="form">
-      <div class="selectors p-1">
-        <div>
-          <label for="color">Choose color</label>
-          <select id="color" class="border">
-            <option value="black">Black</option>
-            <option value="white">White</option>
-          </select>
+  </div>
+  <div class="content-container">
+    <div class="product border p-3">
+      <div class="info">
+        <h4 class="text-primary">{{product.category[0]}} collection</h4>
+        <h3>{{product.name}}</h3>
+        <p class="text-secondary">{{product.description}}</p>
+        <div class="extra">
+          <p class="text-secondary">material: <span class="text-dark">{{product.material}}</span></p>
+          <p class="text-secondary">designer: <span class="text-dark">{{product.designer}}</span></p>
         </div>
-        <div>
-          <label for="size">Choose size</label>
-          <select id="size" class="border">
-            <option value="s">S</option>
-            <option value="m">M</option>
-          </select>
-        </div>
-        <div>
-          <label for="quantity">Quantity</label>
-          <input type="text" id="quantity" placeholder="2" class="border">
-        </div>
+        <h3 class="text-primary">$ {{product.price}}</h3>
       </div>
-      <div>
-        <button class="btn btn-primary p-1">Add to cart</button>
+      <div class="divider bg-light"></div>
+      <div class="form">
+        <div class="selectors p-1">
+          <div>
+            <label for="color">Choose color</label>
+            <select id="color" class="border">
+              <option *ngFor="let color of product.color">{{color}}</option>
+            </select>
+          </div>
+          <div>
+            <label for="size">Choose size</label>
+            <select id="size" class="border">
+              <option *ngFor="let size of product.size">{{size}}</option>
+            </select>
+          </div>
+          <div>
+            <label for="quantity">Quantity</label>
+            <input type="text" id="quantity" placeholder="1" class="border">
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-primary p-1">Add to cart</button>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<app-feature></app-feature>
+<ng-template #loading>Loading ...</ng-template>
+
+<app-feature
+  title="You may also like"
+></app-feature>
