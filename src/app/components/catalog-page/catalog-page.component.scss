@@ -20,6 +20,10 @@
       justify-content: space-between;
       font-size: 0.8rem;
 
+      > div {
+        max-width: 30%;
+      }
+
       h4 {
         text-transform: uppercase;
         font-weight: bold;

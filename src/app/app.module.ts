@@ -24,7 +24,8 @@ import { CartPageComponent } from './components/cart-page/cart-page.component'
 import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component'
 import { ModalComponent } from './shared/components/modal/modal.component'
 import { LoginFormComponent } from './shared/components/login-form/login-form.component'
-import { AccountPageComponent } from './components/account-page/account-page.component'
+import { AccountPageComponent } from './components/account-page/account-page.component';
+import { BreadcrumbsPipe } from './pipes/breadcrumbs.pipe'
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { AccountPageComponent } from './components/account-page/account-page.com
     ModalComponent,
     LoginFormComponent,
     AccountPageComponent,
+    BreadcrumbsPipe,
   ],
   imports: [
     BrowserModule,

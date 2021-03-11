@@ -13,7 +13,10 @@ const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
       {path: '', component: HomePageComponent},
-      {path: 'catalog', component: CatalogPageComponent},
+      {path: 'catalog/woman', component: CatalogPageComponent},
+      {path: 'catalog/man', component: CatalogPageComponent},
+      {path: 'catalog/kids', component: CatalogPageComponent},
+      {path: 'catalog/featured', component: CatalogPageComponent},
       {path: 'catalog/:id', component: ProductPageComponent},
       {path: 'cart', component: CartPageComponent},
       {path: 'checkout', component: CheckoutPageComponent},

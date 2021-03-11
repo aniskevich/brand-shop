@@ -21,7 +21,7 @@ export class FeatureComponent implements OnInit, OnDestroy {
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.productsSub = this.productService.getAll(4).subscribe(products => this.products = products)
+    this.productsSub = this.productService.get({limit: 4}).subscribe(products => this.products = products)
   }
 
   ngOnDestroy(): void {

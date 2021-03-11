@@ -23,12 +23,18 @@ export interface Product {
   material: string
   designer: string
   description: string
+  category: string
+  subcategory: string
   size: string[]
   color: string[]
-  category: string[]
   link: string[]
 }
 
 export interface FBProductsResponse {
   [key: string]: Product
+}
+
+export interface FBProductsRequest {
+  limit?: number
+  category?: string
 }

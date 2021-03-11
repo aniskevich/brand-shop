@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core'
+import {ActivatedRoute} from '@angular/router'
 
 @Component({
   selector: 'app-breadcrumbs',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BreadcrumbsComponent implements OnInit {
 
-  constructor() { }
+  breadcrumbs: string[] = ['']
 
-  ngOnInit(): void {
+  constructor(private route: ActivatedRoute) {
   }
 
+  ngOnInit(): void {
+    this.route.snapshot.url.forEach(route => {
+      if (route.path.startsWith('-')) {
+        return
+      }
+      this.breadcrumbs.push(route.path)
+    })
+  }
 }

@@ -6,7 +6,7 @@
           class="nav-link p-05 text-dark"
           [routerLink]="option.path"
           routerLinkActive="active"
-          [routerLinkActiveOptions]="option.path === '' ? {exact:true} : {exact:false}"
+          [routerLinkActiveOptions]="option.name === 'home' && {exact:true}"
         >{{ option.name }}</a>
       </li>
     </ul>

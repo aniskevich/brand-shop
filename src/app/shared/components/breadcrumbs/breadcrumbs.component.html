@@ -1,12 +1,14 @@
 <div class="container p-3 bg-light">
   <div>
-    <p class="text-primary">NEW ARRIVALS</p>
+    <p class="text-primary">{{breadcrumbs[breadcrumbs.length - 1]}}</p>
   </div>
   <div>
     <ul>
-      <li><a href="#">HOME</a></li>
-      <li><a href="#">MEN</a></li>
-      <li><a href="#">NEW ARRIVALS</a></li>
+      <li *ngFor="let bc of breadcrumbs; let idx = index">
+        <a
+          [routerLink]="breadcrumbs | breadcrumbs:idx"
+        >{{bc || 'home'}}</a>
+      </li>
     </ul>
   </div>
 </div>

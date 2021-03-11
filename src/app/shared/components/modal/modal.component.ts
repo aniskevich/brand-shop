@@ -58,6 +58,6 @@ export class ModalComponent implements OnInit, OnDestroy {
     const modalFactory = this.resolver.resolveComponentFactory(this.componentsMapping[componentName])
     this.content.clear()
     const component = this.content.createComponent(modalFactory)
-    component.instance.exit.subscribe(() => this.close())
+    this.closeSub = component.instance.exit.subscribe(() => this.close())
   }
 }

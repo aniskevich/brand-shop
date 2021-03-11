@@ -4,7 +4,7 @@ import {Observable} from 'rxjs'
 import {map} from 'rxjs/operators'
 
 import {environment} from '../../environments/environment'
-import {FBProductsResponse, Product} from '../shared/interfaces'
+import {FBProductsRequest, FBProductsResponse, Product} from '../shared/interfaces'
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +13,22 @@ export class ProductService {
 
   constructor(private http: HttpClient) {
   }
+// TODO: !!!!!
+  private parseOptions(options: FBProductsRequest): string {
+    if (options.limit) {
+      return `?orderBy="$key"&limitToLast=${options.limit}`
+    } else if (options.category) {
+      if (options.category === 'featured') {
+        return ''
+      }
+      return `?orderBy="category"&equalTo="${options.category}"`
+    } else {
+      return ''
+    }
+  }
 
-  getAll(limit?: number): Observable<Product[]> {
-    return this.http.get<FBProductsResponse>(`${environment.DBUrl}/products.json${limit && '?orderBy="$key"&limitToLast=' + limit}`)
+  get(options: FBProductsRequest): Observable<Product[]> {
+    return this.http.get<FBProductsResponse>(`${environment.DBUrl}/products.json${this.parseOptions(options)}`)
       .pipe(
         map(products => {
           return Array.from(Object.keys(products)

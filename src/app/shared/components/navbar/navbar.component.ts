@@ -7,15 +7,16 @@ import {Component, OnInit} from '@angular/core'
 })
 export class NavbarComponent implements OnInit {
 
-  options: Array<{ name: string, path: string }> = [
-    {name: 'home', path: ''},
-    {name: 'woman', path: '/catalog'}
+  options: Array<{ name: string, path: string[]}> = [
+    {name: 'home', path: ['']},
+    {name: 'woman', path: ['', 'catalog', 'woman']},
+    {name: 'man', path: ['', 'catalog', 'man']},
+    {name: 'kids', path: ['', 'catalog', 'kids']},
+    {name: 'featured', path: ['', 'catalog', 'featured']}
   ]
 
-  constructor() {
-  }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

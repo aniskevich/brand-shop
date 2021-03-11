@@ -12,7 +12,8 @@
     display: flex;
 
     > li:not(:last-child)::after {
-      content: ' / ';
+      content: '/';
+      margin: auto .5rem;
     }
 
     a {
