@@ -4,18 +4,28 @@
       <div>
         <h4>Color</h4>
         <div class="items">
-          <label *ngFor="let data of filters.color">
-            <input type="checkbox" [value]="data" (change)="onCheckboxChange($event.target, 'color')"/>
-            {{data | uppercase}}
+          <label *ngFor="let color of colorArray">
+            <input
+              type="checkbox"
+              [value]="color.name"
+              [checked]="color.checked"
+              (change)="onCheckboxChange($event.target, 'color')"
+            />
+            {{color.name | uppercase}}
           </label>
         </div>
       </div>
       <div>
         <h4>Size</h4>
         <div class="items">
-          <label *ngFor="let data of filters.size">
-            <input type="checkbox" [value]="data" (change)="onCheckboxChange($event.target, 'size')"/>
-            {{data | uppercase}}
+          <label *ngFor="let size of sizeArray">
+            <input
+              type="checkbox"
+              [value]="size.name"
+              [checked]="size.checked"
+              (change)="onCheckboxChange($event.target, 'size')"
+            />
+            {{size.name | uppercase}}
           </label>
         </div>
       </div>

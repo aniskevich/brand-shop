@@ -13,6 +13,8 @@ export class FiltersComponent implements OnInit {
   @Input() filters: Filters
   form: FormGroup
   priceArray: number[]
+  colorArray: Array<{ name: string, checked: boolean }>
+  sizeArray: Array<{ name: string, checked: boolean }>
 
   @Output() private applyFilters = new EventEmitter<FiltersOutput>()
 
@@ -33,6 +35,8 @@ export class FiltersComponent implements OnInit {
       .sort((a, b) => a - b)
     this.form.get('minPrice').setValue(this.getPrice())
     this.form.get('maxPrice').setValue(this.getPrice('max'))
+    this.colorArray = this.filters.color.map(color => ({name: color, checked: false}))
+    this.sizeArray = this.filters.size.map(size => ({name: size, checked: false}))
   }
 
   getPrice(type: 'min' | 'max' = 'min'): number {
@@ -78,6 +82,7 @@ export class FiltersComponent implements OnInit {
   }
 
   submit(): void {
+    console.log(this.form.value)
     this.applyFilters.emit(this.form.value)
   }
 
@@ -86,7 +91,16 @@ export class FiltersComponent implements OnInit {
     this.form.get('maxPrice').setValue(this.getPrice('max'))
     this.form.get('sort').setValue('name')
     this.form.get('pageSize').setValue('3')
+    this.clearFormArray(this.form.get('color') as FormArray)
+    this.clearFormArray(this.form.get('size') as FormArray)
+    this.colorArray = this.colorArray.map(color => ({...color, checked: false}))
+    this.sizeArray = this.sizeArray.map(size => ({...size, checked: false}))
     this.applyFilters.emit(this.form.value)
-    // TODO implement checkboxes clean
+  }
+
+  private clearFormArray(formArray: FormArray): void {
+    while (formArray.length !== 0) {
+      formArray.removeAt(0)
+    }
   }
 }
