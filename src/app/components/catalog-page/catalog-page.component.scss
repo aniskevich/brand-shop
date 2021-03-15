@@ -12,48 +12,6 @@
     grid-area: sidebar;
   }
 
-  .filters {
-    grid-area: filters;
-
-    .options {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-
-      > div {
-        max-width: 30%;
-      }
-
-      h4 {
-        text-transform: uppercase;
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-      }
-
-      .items ul li {
-        display: inline;
-        margin-right: 0.5rem;
-
-        label {
-          margin-left: 0.2rem;
-        }
-      }
-    }
-
-    .sorting {
-
-      > select:not(:last-child) {
-        margin-right: 0.5rem;
-        min-width: 10%;
-      }
-
-      label {
-        font-size: 0.9rem;
-        background-color: #fff;
-      }
-    }
-  }
-
   .products {
     grid-area: products;
     display: flex;
@@ -62,34 +20,9 @@
     justify-content: space-evenly;
   }
 
-  .pagination {
-    grid-area: pagination;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    ul {
-      li {
-        display: inline;
-        margin-right: 0.5rem;
-        cursor: pointer;
-      }
-    }
-  }
-
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
-
-    .filters {
-      .options {
-        flex-wrap: wrap;
-
-        .items ul li {
-          display: block;
-        }
-      }
-    }
   }
 }
 

@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core'
 
+import {Sidebar} from '../../../shared/interfaces'
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -7,16 +9,13 @@ import {Component, Input, OnInit} from '@angular/core'
 })
 export class SidebarComponent implements OnInit {
 
-  opened = false
-  @Input() title!: string
-  @Input() items!: Set<string>
+  @Input() items: Sidebar
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  getParams(item: string): {[key: string]: string} {
-    return {[this.title]: item}
+  getParams(key: string, item: string): {[key: string]: string} {
+    return {[key]: item}
   }
 }

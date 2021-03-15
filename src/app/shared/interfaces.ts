@@ -1,10 +1,3 @@
-export interface ProductCard {
-  id: string
-  name: string
-  price: string
-  src: string
-}
-
 export interface User {
   email: string
   password: string
@@ -37,4 +30,29 @@ export interface FBProductsResponse {
 export interface FBProductsRequest {
   limit?: number
   category?: string
+}
+
+export interface SubCategory {
+  category?: string
+  designer?: string
+}
+
+export interface Sidebar {
+  subcategory: { items: string[], opened: boolean }
+  designer: { items: string[], opened: boolean }
+}
+
+export interface Filters {
+  color: string[]
+  size: string[]
+  price: string[]
+}
+
+export interface FiltersOutput {
+  color: string[]
+  size: string[]
+  minPrice: number
+  maxPrice: number
+  sort: string
+  pageSize: string
 }

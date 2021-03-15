@@ -1,0 +1,18 @@
+.pagination {
+  grid-area: pagination;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    li {
+      display: inline;
+      margin-right: 0.5rem;
+      cursor: pointer;
+
+      &.active {
+        color: var(--primary-color);
+      }
+    }
+  }
+}

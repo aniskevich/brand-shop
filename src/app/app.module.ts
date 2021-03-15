@@ -16,7 +16,7 @@ import { CommentCardComponent } from './shared/components/comment-card/comment-c
 import { HomePageComponent } from './components/home-page/home-page.component'
 import { ProductCardComponent } from './shared/components/product-card/product-card.component'
 import { PromoComponent } from './shared/components/promo/promo.component'
-import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
+import { SidebarComponent } from './components/catalog-page/sidebar/sidebar.component'
 import { ProductPageComponent } from './components/product-page/product-page.component'
 import { BreadcrumbsComponent } from './shared/components/breadcrumbs/breadcrumbs.component'
 import { FeatureComponent } from './shared/components/feature/feature.component'
@@ -24,8 +24,13 @@ import { CartPageComponent } from './components/cart-page/cart-page.component'
 import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component'
 import { ModalComponent } from './shared/components/modal/modal.component'
 import { LoginFormComponent } from './shared/components/login-form/login-form.component'
-import { AccountPageComponent } from './components/account-page/account-page.component';
+import { AccountPageComponent } from './components/account-page/account-page.component'
 import { BreadcrumbsPipe } from './pipes/breadcrumbs.pipe'
+import { SidebarPipe } from './pipes/sidebar.pipe'
+import { FiltersComponent } from './components/catalog-page/filters/filters.component'
+import { FiltersPipe } from './pipes/filters.pipe'
+import { PaginationComponent } from './components/catalog-page/pagination/pagination.component'
+import { PaginationPipe } from './pipes/pagination.pipe'
 
 @NgModule({
   declarations: [
@@ -51,6 +56,11 @@ import { BreadcrumbsPipe } from './pipes/breadcrumbs.pipe'
     LoginFormComponent,
     AccountPageComponent,
     BreadcrumbsPipe,
+    SidebarPipe,
+    FiltersComponent,
+    FiltersPipe,
+    PaginationComponent,
+    PaginationPipe,
   ],
   imports: [
     BrowserModule,

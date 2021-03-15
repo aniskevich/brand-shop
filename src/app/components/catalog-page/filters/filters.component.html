@@ -1,0 +1,61 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="filters">
+    <div class="options text-secondary p-2">
+      <div>
+        <h4>Color</h4>
+        <div class="items">
+          <label *ngFor="let data of filters.color">
+            <input type="checkbox" [value]="data" (change)="onCheckboxChange($event.target, 'color')"/>
+            {{data | uppercase}}
+          </label>
+        </div>
+      </div>
+      <div>
+        <h4>Size</h4>
+        <div class="items">
+          <label *ngFor="let data of filters.size">
+            <input type="checkbox" [value]="data" (change)="onCheckboxChange($event.target, 'size')"/>
+            {{data | uppercase}}
+          </label>
+        </div>
+      </div>
+      <div class="price">
+        <h4>Price</h4>
+        <div class="items">
+          <label for="minPrice">MIN: {{this.form.get('minPrice').value}} $</label>
+          <input
+            id="minPrice"
+            formControlName="minPrice"
+            type="range"
+            [min]="getPrice()"
+            [max]="getPrice('max')"
+            (change)="onRangeChange($event.target)"
+          >
+          <label for="maxPrice">MAX: {{this.form.get('maxPrice').value}} $</label>
+          <input
+            id="maxPrice"
+            formControlName="maxPrice"
+            type="range"
+            [min]="getPrice()"
+            [max]="getPrice('max')"
+            (change)="onRangeChange($event.target)"
+          >
+        </div>
+      </div>
+    </div>
+    <div class="sorting bg-light p-1">
+      <label class="text-secondary p-05 border-right" for="type">Sort By</label>
+      <select id="type" formControlName="sort">
+        <option value="name">Name</option>
+        <option value="price">Price</option>
+      </select>
+      <label class="text-secondary p-05 border-right" for="qty">Show</label>
+      <select id="qty" formControlName="pageSize">
+        <option value="3">3</option>
+        <option value="6">6</option>
+      </select>
+      <button class="btn" type="submit">Apply</button>
+      <button class="btn btn-light" type="button" (click)="clearFilters()">Clear</button>
+    </div>
+  </div>
+</form>

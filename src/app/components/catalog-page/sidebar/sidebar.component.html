@@ -1,0 +1,25 @@
+<div
+  *ngFor="let item of items | keyvalue"
+  class="sidebar-container p-05"
+>
+  <div
+    class="sidebar-title border-bottom text-primary p-05"
+    (click)="item.value.opened = !item.value.opened"
+  >
+    <h4>{{item.key | uppercase}}</h4>
+    <img
+      [ngClass]="{up: item.value.opened}"
+      src="/assets/images/arrowdown.png"
+      alt="arrow"
+    >
+  </div>
+  <ul class="text-secondary" *ngIf="item.value.opened">
+    <li
+      *ngFor="let subItem of item.value.items"
+      [routerLink]="[]"
+      [queryParams]="getParams(item.key, subItem)"
+    >
+      {{subItem | uppercase}}
+    </li>
+  </ul>
+</div>

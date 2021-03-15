@@ -1,0 +1,19 @@
+<div class="pagination">
+  <div>
+    <ul class="text-secondary">
+      <li
+        *ngIf="pages.length > 1"
+        (click)="handleNavigation('prev')"
+      >&larr;</li>
+      <li
+        *ngFor="let page of pages; let i = index"
+        [ngClass]="{active: i+1 === currentPage}"
+        (click)="changePage($event.target)"
+      >{{i+1}}</li>
+      <li
+        *ngIf="pages.length > 1"
+        (click)="handleNavigation('next')"
+      >&rarr;</li>
+    </ul>
+  </div>
+</div>

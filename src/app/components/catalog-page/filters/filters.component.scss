@@ -1,0 +1,75 @@
+.filters {
+  grid-area: filters;
+
+  .options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+
+    > div {
+      max-width: 30%;
+    }
+
+    .price .items {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    h4 {
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .items ul li {
+      display: inline;
+      margin-right: 0.5rem;
+
+      label {
+        margin-left: 0.2rem;
+      }
+    }
+  }
+
+  .sorting {
+
+    > select:not(:last-child) {
+      margin-right: 0.5rem;
+      min-width: 10%;
+    }
+
+    label {
+      font-size: 0.9rem;
+      background-color: #fff;
+    }
+
+    select {
+      background-color: #fff;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .options {
+      flex-direction: column;
+
+      > div {
+        max-width: inherit;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .sorting {
+      display: flex;
+      flex-direction: column;
+
+      > :not(:last-child) {
+        margin-bottom: 0.5rem;
+        margin-right: 0!important;
+      }
+    }
+  }
+}
