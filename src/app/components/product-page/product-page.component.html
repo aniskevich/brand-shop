@@ -1,5 +1,4 @@
 <app-breadcrumbs></app-breadcrumbs>
-
 <div *ngIf="product; else loading">
   <div class="banner-wrapper bg-light">
     <div class="banner-content">
@@ -9,7 +8,7 @@
   <div class="content-container">
     <div class="product border p-3">
       <div class="info">
-        <h4 class="text-primary">{{product.category[0]}} collection</h4>
+        <h4 class="text-primary">{{product.category}} collection</h4>
         <h3>{{product.name}}</h3>
         <p class="text-secondary">{{product.description}}</p>
         <div class="extra">
@@ -19,35 +18,33 @@
         <h3 class="text-primary">$ {{product.price}}</h3>
       </div>
       <div class="divider bg-light"></div>
-      <div class="form">
+      <form [formGroup]="form" (ngSubmit)="submit()">
         <div class="selectors p-1">
           <div>
             <label for="color">Choose color</label>
-            <select id="color" class="border">
+            <select id="color" class="border" formControlName="color">
               <option *ngFor="let color of product.color">{{color}}</option>
             </select>
           </div>
           <div>
             <label for="size">Choose size</label>
-            <select id="size" class="border">
+            <select id="size" class="border" formControlName="size">
               <option *ngFor="let size of product.size">{{size}}</option>
             </select>
           </div>
           <div>
             <label for="quantity">Quantity</label>
-            <input type="text" id="quantity" placeholder="1" class="border">
+            <input type="text" id="quantity" class="border" formControlName="quantity">
           </div>
         </div>
         <div>
-          <button class="btn btn-primary p-1">Add to cart</button>
+          <button class="btn btn-primary p-1" type="submit">Add to cart</button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>
-
 <ng-template #loading>Loading ...</ng-template>
-
 <app-feature
   title="You may also like"
 ></app-feature>

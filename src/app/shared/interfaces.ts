@@ -56,3 +56,20 @@ export interface FiltersOutput {
   sort: string
   pageSize: string
 }
+
+export interface AddProductToCartForm {
+  id: string
+  color: string
+  size: string
+  quantity: number
+}
+
+export interface CartProduct {
+  id: string
+  name: string
+  price: string
+  size: string
+  color: string
+  link: string[]
+  quantity: number
+}

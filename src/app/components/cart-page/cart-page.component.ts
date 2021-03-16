@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core'
+
+import {CartService} from '../../services/cart.service'
+import {CartProduct} from '../../shared/interfaces'
 
 @Component({
   selector: 'app-cart-page',
@@ -7,9 +10,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartPageComponent implements OnInit {
 
-  constructor() { }
+  cart: CartProduct[]
 
-  ngOnInit(): void {
+  constructor(
+    private cartService: CartService
+  ) {
   }
 
+  ngOnInit(): void {
+    this.cart = this.cartService.getCart()
+  }
+
+  addProduct(product: CartProduct): void {
+    this.cartService.increaseQuantity(product)
+  }
+
+  removeProduct(product: CartProduct): void {
+    this.cartService.decreaseQuantity(product)
+  }
+
+  clearCart(): void {
+    this.cartService.clearCart()
+  }
+
+  get totalPrice(): number {
+    return this.cart.reduce((acc, item) => {
+      acc += +item.price * item.quantity
+      return acc
+    }, 0)
+  }
 }

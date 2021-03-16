@@ -20,6 +20,16 @@ header {
     display: flex;
   }
 
+  .cart {
+    position: relative;
+
+    span {
+      position: absolute;
+      top: -1rem;
+      right: -0.5rem;
+    }
+  }
+
   @media (max-width: 425px) {
     flex-direction: column;
 
