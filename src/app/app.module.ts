@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core'
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser'
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -31,6 +31,8 @@ import { FiltersComponent } from './components/catalog-page/filters/filters.comp
 import { FiltersPipe } from './pipes/filters.pipe'
 import { PaginationComponent } from './components/catalog-page/pagination/pagination.component'
 import { PaginationPipe } from './pipes/pagination.pipe'
+import { AdminPageComponent } from './components/admin-page/admin-page.component'
+import { AuthInterceptor } from './services/auth.interceptor.service'
 
 @NgModule({
   declarations: [
@@ -61,6 +63,7 @@ import { PaginationPipe } from './pipes/pagination.pipe'
     FiltersPipe,
     PaginationComponent,
     PaginationPipe,
+    AdminPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +72,13 @@ import { PaginationPipe } from './pipes/pagination.pipe'
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+      useClass: AuthInterceptor
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

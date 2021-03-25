@@ -8,6 +8,8 @@ import {CartPageComponent} from './components/cart-page/cart-page.component'
 import {CheckoutPageComponent} from './components/checkout-page/checkout-page.component'
 import {AccountPageComponent} from './components/account-page/account-page.component'
 import {AuthGuardService} from './services/auth-guard.service'
+import { AdminPageComponent } from './components/admin-page/admin-page.component'
+import { AdminGuardService } from './services/admin-guard.service'
 
 const routes: Routes = [
   {
@@ -20,8 +22,9 @@ const routes: Routes = [
       {path: 'catalog/:id', component: ProductPageComponent},
       {path: 'cart', component: CartPageComponent},
       {path: 'checkout', component: CheckoutPageComponent},
-      {path: 'account', component: AccountPageComponent, canActivate: [AuthGuardService]}
-    ]
+      {path: 'account', component: AccountPageComponent, canActivate: [AuthGuardService]},
+      {path: 'admin', component: AdminPageComponent, canActivate: [AdminGuardService]}
+    ] 
   }
 ]
 

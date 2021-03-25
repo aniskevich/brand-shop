@@ -22,6 +22,12 @@
       </div>
       <ng-template #logoutBtn>
         <div class="buttons">
+          <button 
+            class="btn" 
+            [routerLink]="'admin'"
+            *ngIf="auth.role === 'admin'"
+          >
+            Dashboard</button>
           <button class="btn" [routerLink]="'account'">My account</button>
           <button class="btn" (click)="logout()">Sign Out</button>
         </div>

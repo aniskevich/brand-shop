@@ -1,4 +1,4 @@
-export interface User {
+export interface FBUserRequest {
   email: string
   password: string
   returnSecureToken?: boolean
@@ -7,6 +7,7 @@ export interface User {
 export interface FBAuthResponse {
   idToken: string
   expiresIn: string
+  localId: string
 }
 
 export interface Product {
@@ -72,4 +73,10 @@ export interface CartProduct {
   color: string
   link: string[]
   quantity: number
+}
+
+export interface User {
+  firstName: string
+  lastName: string
+  role: string
 }

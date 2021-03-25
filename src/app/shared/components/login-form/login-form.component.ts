@@ -1,9 +1,10 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core'
+import {Component, OnInit, Output, EventEmitter, OnDestroy} from '@angular/core'
 import {FormControl, FormGroup, Validators} from '@angular/forms'
 import {Router} from '@angular/router'
 
-import {User} from '../../interfaces'
+import {FBUserRequest} from '../../interfaces'
 import {AuthService} from '../../../services/auth.service'
+import { Subscription } from 'rxjs'
 
 
 @Component({
@@ -11,10 +12,11 @@ import {AuthService} from '../../../services/auth.service'
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss']
 })
-export class LoginFormComponent implements OnInit {
+export class LoginFormComponent implements OnInit, OnDestroy {
 
   public form!: FormGroup
   @Output() exit = new EventEmitter<null>()
+  authSub: Subscription
 
   constructor(
     public auth: AuthService,
@@ -28,12 +30,18 @@ export class LoginFormComponent implements OnInit {
     })
   }
 
+  ngOnDestroy(): void {
+    if (this.authSub) {
+      this.authSub.unsubscribe()
+    }
+  }
+
   submit(): void {
     if (this.form.invalid) {
       return
     }
 
-    const user: User = {
+    const user: FBUserRequest = {
       email: this.form.value.email,
       password: this.form.value.password
     }
