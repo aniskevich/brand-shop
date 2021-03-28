@@ -1,4 +1,30 @@
-<div *ngIf="user">
-  {{user.firstName}}
-  {{user.lastName}}
+<div *ngIf="user" class="container cabinet">
+    <div class="userInfo">
+        <h4>user info</h4>
+        <!-- <img :src="user.link" alt="user_avatar"> -->
+        <p>First name: <span>{{user.firstName}}</span></p>
+        <p>Last name: <span>{{user.lastName}}</span></p>
+        <button class="btn btn-light">CHANGE</button>
+    </div>
+    <div class="reviews">
+        <h4>user reviews</h4>
+        <div>
+            <div>Review ID</div>
+            <div>Review text</div>
+            <div>Action</div>
+        </div>    
+        <!-- <div class="review row" v-for="review in app.reviews" v-if="app.reviews.length !== 0">
+            <div class="col-md-2">{{ review.id }}</div>
+            <div class="col-md-8">{{ review.text }}</div>
+            <div class="col-md-2"><i class="fas fa-times-circle" @click="deleteReview(review)"></i></div>
+        </div> -->
+    </div>
+    <div class="addReview">
+        <h4>add review</h4>
+        <textarea></textarea>
+        <button class="btn btn-light">ADD</button>
+    </div>
+    <div class="orders">
+      <h4>user orders</h4>
+  </div>
 </div>

@@ -26,8 +26,6 @@ export class AccountPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if (this.userSub) {
-      this.userSub.unsubscribe()
-    }
+    this.userSub?.unsubscribe()
   }
 }

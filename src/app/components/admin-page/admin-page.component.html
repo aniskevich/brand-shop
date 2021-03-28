@@ -1,1 +1,19 @@
-<p>admin-page works!</p>
+<div>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div
+      *ngFor="let control of form.controls | keyvalue"
+      [ngClass]="{error: form.get(control.key).touched && form.get(control.key).invalid}"
+      class="form-control"
+    >
+      <label for="{{control.key}}">Product {{control.key}}</label>
+      <input type="text" id="{{control.key}}" formControlName="{{control.key}}">
+      <div
+        *ngIf="form.get(control.key).touched && form.get(control.key).invalid"
+        class="validation"
+      >
+        <small *ngIf="form.get(control.key).errors.required">Required Field</small>
+      </div>
+    </div>
+    <button type="submit" class="btn">Add product</button>
+  </form>
+</div>

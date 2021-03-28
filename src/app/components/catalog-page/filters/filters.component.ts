@@ -81,8 +81,7 @@ export class FiltersComponent implements OnInit {
     }
   }
 
-  submit(): void {
-    console.log(this.form.value)
+it   submit(): void {
     this.applyFilters.emit(this.form.value)
   }
 

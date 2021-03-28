@@ -23,13 +23,13 @@
           </p>
         </div>
       </div>
-      <div class="col-md-2">$ {{item.price}}</div>
-      <div class="col-md-2">{{item.quantity}} pcs.</div>
-      <div class="col-md-1">free</div>
-      <div class="col-md-2">$ {{(item.quantity * +item.price) | number:'.0-2'}}</div>
-      <div class="col-md-1">
-        <button (click)="addProduct(item)">+</button>
-        <button (click)="removeProduct(item)">-</button>
+      <div>$ {{item.price}}</div>
+      <div>{{item.quantity}} pcs.</div>
+      <div>free</div>
+      <div>$ {{(item.quantity * +item.price) | number:'.0-2'}}</div>
+      <div>
+        <button class="btn btn-light" (click)="addProduct(item)">+</button>
+        <button class="btn btn-light" (click)="removeProduct(item)">-</button>
       </div>
     </div>
   </div>
