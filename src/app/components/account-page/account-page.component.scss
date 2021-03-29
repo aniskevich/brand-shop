@@ -2,49 +2,61 @@
   padding: 20px;
   border-top: 1px solid #ececec;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1;
+
+  >div {
+    min-width: 40%;
+  }
+
   h4 {
-      text-align: center;
-      text-transform: uppercase;
-      border-bottom: 1px solid #ececec;
-      width: 100%;
-      padding-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ececec;
+    width: 100%;
+    padding-bottom: 10px;
   }
+
   .userInfo {
-      padding: 20px;
-      img {
-          display: block;
+    img {
+      display: block;
+    }
+
+    p {
+      text-transform: capitalize;
+      margin: 10px 0;
+
+      span {
+        color: #f16d7f;
+        text-transform: none;
       }
-      p {
-          text-transform: capitalize;
-          margin: 10px 0;
-          span {
-              color: #f16d7f;
-              text-transform: none;
-          }
-      }
+    }
   }
+
   .reviews {
-      padding: 20px;
-      text-align: center;
-      .review {
-          padding: 10px 0;
-          text-align: justify;
-          border: 1px solid #ececec;
-          & :first-child, :last-child {
-              text-align: center;
-              margin: auto 0;
-          }
-      }
-  }
-  .addReview {
+    text-align: center;
+
+    .review {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      textarea {
-          width: 600px;
-          border: 1px solid #ececec;
-          padding: 15px;
-          outline: none;
+      justify-content: space-between;
+
+      :last-child {
+        cursor: pointer;
       }
+    }
+  }
+
+  .addReview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    textarea {
+      width: 600px;
+      border: 1px solid #ececec;
+      padding: 15px;
+      outline: none;
+    }
   }
 }

@@ -80,3 +80,14 @@ export interface User {
   lastName: string
   role: string
 }
+
+export interface Review {
+  id?: string
+  author_id: string
+  text: string
+  date: string
+}
+
+export interface FBReviewsResponse {
+  [key: string]: Review
+}
